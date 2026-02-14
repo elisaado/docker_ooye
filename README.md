@@ -5,7 +5,20 @@ _super_ easy to bridge your Discord server to matrix, and this container makes i
 
 [ooye]: https://gitdab.com/cadence/out-of-your-element
 
+## Quirks
+
+Since in this image we mount a registration.yaml ourselves, it may be the case that it becomes read-only in the container, depending on your setup (e.g. if you are using a Kubernetes ConfigMap or Secret to mount it). Apart from the initial setup, this is a problem in one file: `src/matrix/file.js`, which writes to to the registration.yaml to set an option if file uploads fail.
+
+If you see an error in the console like `OOYE cannot stream uploads to Synapse.`, make sure to set the `content_length_workaround` option in registration.yaml manually.
+
 ## Usage
+
+### Docker container
+
+- Pull this container from this ghcr.io, with builds provided by GitHub Actions
+- Mount a directory to `/app/db` on the container's side to store the database
+- Mount a registration.yaml you generate with `npm run setup` to `/app/registration.yaml` on the container's side. If you are unable to run the setup, a sample registration.yaml is provided in this repository at `registration.sample.yaml`
+- Optionally set the env var `EMOJI_GUILD` to decide where to store emoji
 
 ### Create Discord Bot
 
