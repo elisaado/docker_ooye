@@ -6,9 +6,8 @@ WORKDIR /app
 RUN npm i
 
 RUN adduser ooye -Du 1001
+RUN touch /app/ooye.db
 RUN chown -R ooye /app
-RUN mkdir /app/db
-RUN touch /app/db/ooye.db
 USER ooye
 
 # Discord Guild ID to upload emojis to, if necessary.

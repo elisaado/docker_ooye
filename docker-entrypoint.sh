@@ -3,7 +3,7 @@
 set -e
 
 # Make sure the database exists
-touch /app/db/ooye.db
+touch /app/ooye.db
 
 if [ -f /app/registration.yaml ]; then
   echo "Here is your registration YAML:"
@@ -12,6 +12,7 @@ if [ -f /app/registration.yaml ]; then
   echo ""
 else
   echo "No registration.yaml mounted on /app/registration.yaml, exiting"
+  sleep 60
   exit 1
 fi
 
