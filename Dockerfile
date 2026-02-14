@@ -1,14 +1,15 @@
-FROM node:18-alpine
+FROM node:24-alpine
 
 RUN apk add --no-cache git
-RUN git clone --depth 1 --branch v2.0 https://gitdab.com/cadence/out-of-your-element.git /app
+RUN git clone --depth 1 --branch v3.3 https://gitdab.com/cadence/out-of-your-element.git /app
 WORKDIR /app
 RUN npm i
 
 RUN adduser ooye -Du 1001
 RUN chown -R ooye /app
-RUN ln -s /data/ooye.db /app/db/ooye.db
-RUN mkdir /data && chown -R ooye:ooye /data
+RUN mkdir /app/db
+RUN touch /app/db/ooye.db
+#RUN ln -s /data/ooye.db /app/db/ooye.db
 USER ooye
 
 ENV DISCORD_TOKEN="notarealdiscordtoken"
@@ -28,6 +29,7 @@ ENV HS_TOKEN="[a unique 64 character hex string]"
 ENV AS_TOKEN="[a unique 64 character hex string]"
 
 VOLUME /app/db
+EXPOSE 6693/tcp
 
 COPY --chmod=744 --chown=ooye:ooye ./docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
