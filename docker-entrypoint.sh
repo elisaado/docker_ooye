@@ -24,6 +24,7 @@ fi
 # fi
 #
 # node scripts/seed.js $emoji_arg
+cd /app
 node scripts/setup.js
 
 echo "Starting server"
