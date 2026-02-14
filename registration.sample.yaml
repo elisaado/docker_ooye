@@ -30,11 +30,11 @@
     "include_user_id_in_mxid": false,
     "invite": [],
     "receive_presences": true,
-    "bridge_origin": "http://localhost:6693",
+    "bridge_origin": "publically_accessible_url_the_bridge_live_on.com",
     "server_origin": "https://matrix.yourhomeserver.com",
     "discord_token": "your discord token",
     "discord_client_secret": "your discord oauth2 client secret",
     "web_password": "optionally, a web password"
   },
-  "url": "http://localhost:6693"
+  "url": "publically_accessible_url_the_bridge_live_on.com"
 }
