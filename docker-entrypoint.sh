@@ -24,8 +24,20 @@ fi
 # fi
 #
 # node scripts/seed.js $emoji_arg
+echo
+ls -la /
+echo
+ls -la /app
+echo
+ls -la
+echo
 cd /app
 node scripts/setup.js
+
+echo
+ls -la /app
+echo
+cat /app/registration.yaml
 
 echo "Starting server"
 exec npm run start
