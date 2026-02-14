@@ -1,4 +1,4 @@
-name: Build Matchmaker
+name: Build Docker Image
 
 on:
   push:
@@ -6,8 +6,6 @@ on:
       - master
     tags:
       - "v*"
-  schedule:
-    - cron: "0 0 */7 * *"
   workflow_dispatch:
 
 env:
@@ -28,7 +26,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ghcr.io/katharostech/ooye
+            ghcr.io/elisaado/ooye
 
           # generate Docker tags based on the following events/attributes
           tags: |
