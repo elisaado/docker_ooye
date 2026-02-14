@@ -9,20 +9,20 @@ if [ -f /app/registration.yaml ]; then
   echo "Here is your registration YAML:"
   echo ""
   cat /app/registration.yaml
-echo ""
+  echo ""
 else
   echo "No registration.yaml mounted on /app/registration.yaml, exiting"
   exit 1
 fi
 
-echo "Setting up / seeding database if necessary"
-
-emoji_arg=""
-if [ -n "${EMOJI_GUILD}" ]; then
-  emoji_arg="--emoji-guild=${EMOJI_GUILD}"
-fi
-
-node scripts/seed.js $emoji_arg
+# echo "Setting up / seeding database if necessary"
+#
+# emoji_arg=""
+# if [ -n "${EMOJI_GUILD}" ]; then
+#   emoji_arg="--emoji-guild=${EMOJI_GUILD}"
+# fi
+#
+# node scripts/seed.js $emoji_arg
 
 echo "Starting server"
 exec node start.js
