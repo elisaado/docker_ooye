@@ -6,7 +6,7 @@ WORKDIR /app
 RUN npm i
 
 RUN adduser ooye -Du 1001
-RUN touch /app/ooye.db
+#RUN touch /app/ooye.db
 RUN chown -R ooye /app
 USER ooye
 

@@ -3,7 +3,7 @@
 set -e
 
 # Make sure the database exists
-touch /app/ooye.db
+#touch /app/ooye.db
 
 if [ -f /app/registration.yaml ]; then
   echo "Here is your registration YAML:"
