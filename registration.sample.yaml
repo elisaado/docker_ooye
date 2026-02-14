@@ -1,0 +1,40 @@
+{
+  "id": "ooye",
+  "as_token": "64 random chars you generate using dd if=/dev/urandom bs=32 count=1 2> /dev/null | basenc --base16 | dd conv=lcase 2> /dev/null",
+  "hs_token": "64 random chars you generate using dd if=/dev/urandom bs=32 count=1 2> /dev/null | basenc --base16 | dd conv=lcase 2> /dev/null",
+  "namespaces": {
+    "users": [
+      {
+        "exclusive": true,
+        "regex": "@_ooye_.*:yourhomeserver.com"
+      }
+    ],
+    "aliases": [
+      {
+        "exclusive": true,
+        "regex": "#_ooye_.*:yourhomeserver.com"
+      }
+    ]
+  },
+  "protocols": [
+    "discord"
+  ],
+  "sender_localpart": "_ooye_bot",
+  "rate_limited": false,
+  "socket": 6693,
+  "ooye": {
+    "namespace_prefix": "_ooye_",
+    "server_name": "yourhomeserver.com",
+    "max_file_size": 5000000,
+    "content_length_workaround": false,
+    "include_user_id_in_mxid": false,
+    "invite": [],
+    "receive_presences": true,
+    "bridge_origin": "http://localhost:6693",
+    "server_origin": "https://matrix.yourhomeserver.com",
+    "discord_token": "your discord token",
+    "discord_client_secret": "your discord oauth2 client secret",
+    "web_password": "optionally, a web password"
+  },
+  "url": "http://localhost:6693"
+}
